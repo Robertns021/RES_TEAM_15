@@ -8,6 +8,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Xml;
 using Common;
+using MySql.Data.MySqlClient;
 
 namespace ResidentExecutor
 {
@@ -15,6 +16,13 @@ namespace ResidentExecutor
     {
         static void Main(string[] args)
         {
+            //Nacin upisivanja u DB za svaku tabelu su prva dva parametra ista a poslednji se menja
+            /*MySqlConnection con = new MySqlConnection("server = localhost; user id = root; password = root; database = res_team_15");
+            MySqlCommand cmd = new MySqlCommand("insert into funkcija1(vreme_proracuna, poslednje_merenje, prosecna_potrosnja) values('2021-12-31 23:59:59', '2021-12-31 23:59:59', 13.5)", con);
+            con.Open();
+            cmd.ExecuteNonQuery();
+            con.Close();*/
+
             //string fileName = @"C:\Users\Ivica\RES_TEAM_15\Projekat\Server\App.config";
             //XmlDocument doc = new XmlDocument();
             //doc.Load(fileName);
