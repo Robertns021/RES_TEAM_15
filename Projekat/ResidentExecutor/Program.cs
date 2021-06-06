@@ -32,16 +32,23 @@ namespace ResidentExecutor
             // vreme = Int16.Parse(nodeL.Item(0).Value);
 
             int vreme = Convert.ToInt32(ConfigurationManager.AppSettings["vreme"]);
+            bool f1 = Convert.ToBoolean(ConfigurationManager.AppSettings["f1"]);
+            bool f2 = Convert.ToBoolean(ConfigurationManager.AppSettings["f2"]);
+            bool f3 = Convert.ToBoolean(ConfigurationManager.AppSettings["f3"]);
 
             ChannelFactory<IFunkcije> channel = new ChannelFactory<IFunkcije>("ServiceFunkcije");
             IFunkcije proxy = channel.CreateChannel();
+            Komponenta k = new Komponenta();
 
             while (true)
             {
-                Console.WriteLine("a = 5, b = 6 \n");
-                //Console.WriteLine($"a+b = {proxy.funkcija1(5, 6)}\n");
-                //Console.WriteLine($"(a+b)/2 = {proxy.funkcija2(5, 6)}\n");
-                //Console.WriteLine($"a-b = {proxy.funkcija3(5, 6)}\n\n");
+                if (f1)
+                    proxy.funkcija1(k);
+                if (f2)
+                    proxy.funkcija2(k);
+                if (f3)
+                    proxy.funkcija3(k);
+
                 Console.WriteLine($"pauza {vreme/1000} sekundi \n\n");
                 Thread.Sleep(vreme);
             }
