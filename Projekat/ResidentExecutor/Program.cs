@@ -39,9 +39,9 @@ namespace ResidentExecutor
             while (true)
             {
                 Console.WriteLine("a = 5, b = 6 \n");
-                Console.WriteLine($"a+b = {proxy.funkcija1(5, 6)}\n");
-                Console.WriteLine($"(a+b)/2 = {proxy.funkcija2(5, 6)}\n");
-                Console.WriteLine($"a-b = {proxy.funkcija3(5, 6)}\n\n");
+                //Console.WriteLine($"a+b = {proxy.funkcija1(5, 6)}\n");
+                //Console.WriteLine($"(a+b)/2 = {proxy.funkcija2(5, 6)}\n");
+                //Console.WriteLine($"a-b = {proxy.funkcija3(5, 6)}\n\n");
                 Console.WriteLine($"pauza {vreme/1000} sekundi \n\n");
                 Thread.Sleep(vreme);
             }
