@@ -8,11 +8,11 @@ namespace Projekat
 {
     public class DataAccess : DB
     {
-        private bool povezan;
+    /*    private bool povezan;
 
         public static int br = 0;
         public string Naziv { get; }
-        public bool Povezan { get => povezan; /*set => povezan = value;*/ }
+        public bool Povezan { get => povezan; set => povezan = value; }
 
         public DataAccess()
         {
@@ -89,6 +89,6 @@ namespace Projekat
         {
             return povezan = false;
         }
-        
+        */
     }
 }
