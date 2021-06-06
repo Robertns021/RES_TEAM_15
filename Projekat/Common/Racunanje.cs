@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.ServiceModel;
 using System.Runtime.Serialization;
 
 
@@ -11,13 +10,13 @@ using System.Runtime.Serialization;
 namespace Common
 {
     [DataContract]
-    public class Komponenta
+    public class Racunanje
     {
         public static int last = 0;
         [DataMember]
         public int Id { get; }
         [DataMember]
-        public string Naziv { get; set; } // placeholder polja
+        public string Naziv { get; set; }
         [DataMember]
         public double Vrednost { get; set; }
         [DataMember]
@@ -25,12 +24,15 @@ namespace Common
         [DataMember]
         public DateTime PoslednjeVreme { get; set; }
 
+        public Racunanje() { Id = last++; }
 
-        public Komponenta(string naziv = "", double vrednost = 0)
+        public Racunanje(string naziv, double vrednost, DateTime vreme_proracuna, DateTime poslednje_vreme)
         {
             Id = last++;
             Naziv = naziv;
             Vrednost = vrednost;
+            VremeProracuna = vreme_proracuna;
+            PoslednjeVreme = poslednje_vreme;     
         }
     }
 }

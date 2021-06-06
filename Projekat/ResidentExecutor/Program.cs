@@ -37,21 +37,7 @@ namespace ResidentExecutor
             bool f3 = Convert.ToBoolean(ConfigurationManager.AppSettings["f3"]);
 
             ChannelFactory<IFunkcije> channel = new ChannelFactory<IFunkcije>("ServiceFunkcije");
-            IFunkcije proxy = channel.CreateChannel();
-            Komponenta k = new Komponenta();
-
-            while (true)
-            {
-                if (f1)
-                    proxy.funkcija1(k);
-                if (f2)
-                    proxy.funkcija2(k);
-                if (f3)
-                    proxy.funkcija3(k);
-
-                Console.WriteLine($"pauza {vreme/1000} sekundi \n\n");
-                Thread.Sleep(vreme);
-            }
+            IFunkcije proxy = channel.CreateChannel();           
         }
     }
 }

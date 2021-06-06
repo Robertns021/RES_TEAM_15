@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Projekat
 {
-    public class DataAccess : DB
+    public class DataAccess
     {
     /*    private bool povezan;
 

@@ -44,8 +44,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IFunkcije.cs" />
-    <Compile Include="Komponenta.cs" />
+    <Compile Include="Merenje.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Racunanje.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

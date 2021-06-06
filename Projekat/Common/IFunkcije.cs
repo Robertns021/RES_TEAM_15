@@ -11,12 +11,12 @@ namespace Common
     public interface IFunkcije
     {
         [OperationContract]
-        void funkcija1(Komponenta k); //Upisuje se vreme pa potrosnja
+        void funkcija1(Merenje m); //Upisuje se vreme pa potrosnja
 
         [OperationContract]
-        void funkcija2(Komponenta k); //Upisuje se vreme pa potrosnja
+        void funkcija2(Merenje m); //Upisuje se vreme pa potrosnja
 
         [OperationContract]
-        void funkcija3(Komponenta k); //Upisuje se vreme pa potrosnja
+        void funkcija3(Merenje m); //Upisuje se vreme pa potrosnja
     }
 }
