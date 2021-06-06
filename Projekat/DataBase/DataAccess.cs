@@ -15,7 +15,7 @@ namespace DataBase
         {
             using (MySqlConnection con = new MySqlConnection("server = localhost; user id = root; password = root; database = res_team_15"))
             {
-                MySqlCommand cmd = new MySqlCommand($"insert into funkcija2(vreme_proracuna, poslednje_merenje, minimalna_potrosnja) values('{a}', '{DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss")}', {b})", con);
+                MySqlCommand cmd = new MySqlCommand($"insert into funkcija2(vreme_proracuna, poslednje_merenje, minimalna_potrosnja) values('{k.VremeProracuna}', '{k.PoslednjeVreme}', {k.Vrednost})", con);
                 con.Open();
                 cmd.ExecuteNonQuery();
                 con.Close();
@@ -26,7 +26,7 @@ namespace DataBase
         {
             using (MySqlConnection con = new MySqlConnection("server = localhost; user id = root; password = root; database = res_team_15"))
             {
-                MySqlCommand cmd = new MySqlCommand($"insert into funkcija3(vreme_proracuna, poslednje_merenje, maksimalna_potrosnja) values('{a}', '{DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss")}', {b})", con);
+                MySqlCommand cmd = new MySqlCommand($"insert into funkcija3(vreme_proracuna, poslednje_merenje, maksimalna_potrosnja) values('{k.VremeProracuna}', '{k.PoslednjeVreme}', {k.Vrednost})", con);
                 con.Open();
                 cmd.ExecuteNonQuery();
                 con.Close();
@@ -37,7 +37,7 @@ namespace DataBase
         {
             using (MySqlConnection con = new MySqlConnection("server = localhost; user id = root; password = root; database = res_team_15"))
             {
-                MySqlCommand cmd = new MySqlCommand($"insert into funkcija1(vreme_proracuna, poslednje_merenje, prosecna_potrosnja) values('{a}', '{DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss")}', {b})", con);
+                MySqlCommand cmd = new MySqlCommand($"insert into funkcija1(vreme_proracuna, poslednje_merenje, prosecna_potrosnja) values('{k.VremeProracuna}', '{k.PoslednjeVreme}', {k.Vrednost})", con);
                 con.Open();
                 cmd.ExecuteNonQuery();
                 con.Close();

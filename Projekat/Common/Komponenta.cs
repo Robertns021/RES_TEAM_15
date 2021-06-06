@@ -21,9 +21,9 @@ namespace Common
         [DataMember]
         public double Vrednost { get; set; }
         [DataMember]
-        public DateTime vremeproracuna { get; set; }
+        public DateTime VremeProracuna { get; set; }
         [DataMember]
-        public DateTime poslednjevreme { get; set; }
+        public DateTime PoslednjeVreme { get; set; }
 
 
         public Komponenta(string naziv = "", double vrednost = 0)
