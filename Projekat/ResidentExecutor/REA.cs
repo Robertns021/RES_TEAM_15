@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace ResidentExecutor
 {
-    class REA
+    public class REA
     {
         readonly int vreme = Convert.ToInt32(ConfigurationManager.AppSettings["vreme"]);
         readonly bool f1 = Convert.ToBoolean(ConfigurationManager.AppSettings["f1"]);
