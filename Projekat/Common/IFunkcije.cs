@@ -11,12 +11,12 @@ namespace Common
     public interface IFunkcije
     {
         [OperationContract]
-        int funkcija1(int a, int b); //Upisuje se vreme pa potrosnja
+        int funkcija1(string a, double b); //Upisuje se vreme pa potrosnja
 
         [OperationContract]
-        int funkcija2(int a, int b); //Upisuje se vreme pa potrosnja
+        int funkcija2(string a, double b); //Upisuje se vreme pa potrosnja
 
         [OperationContract]
-        int funkcija3(int a, int b); //Upisuje se vreme pa potrosnja
+        int funkcija3(string a, double b); //Upisuje se vreme pa potrosnja
     }
 }
