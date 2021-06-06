@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.1401
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31129.286
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Projekat", "Projekat\Projekat.csproj", "{5131E9DE-AE96-4275-B990-497F184AA2AA}"
 EndProject
@@ -12,6 +12,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResidentExecutor", "ResidentExecutor\ResidentExecutor.csproj", "{1A14239D-AB04-4CDA-BAF0-A07012CBFAEF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client", "Client\Client.csproj", "{64036B5C-A1F6-4B30-ADC7-82214C423EF9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataBase", "DataBase\DataBase.csproj", "{8DE0F8B4-CB0C-4271-A826-914A28DF9DFC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{64036B5C-A1F6-4B30-ADC7-82214C423EF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{64036B5C-A1F6-4B30-ADC7-82214C423EF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{64036B5C-A1F6-4B30-ADC7-82214C423EF9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8DE0F8B4-CB0C-4271-A826-914A28DF9DFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8DE0F8B4-CB0C-4271-A826-914A28DF9DFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8DE0F8B4-CB0C-4271-A826-914A28DF9DFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8DE0F8B4-CB0C-4271-A826-914A28DF9DFC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

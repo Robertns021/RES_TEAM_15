@@ -57,6 +57,10 @@
       <Project>{8b9a1228-3bca-4482-b589-e685ef98a720}</Project>
       <Name>Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\DataBase\DataBase.csproj">
+      <Project>{8de0f8b4-cb0c-4271-a826-914a28df9dfc}</Project>
+      <Name>DataBase</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -5,42 +5,26 @@ using System.Text;
 using System.Threading.Tasks;
 using Common;
 using MySql.Data.MySqlClient;
+using DataBase;
 
 namespace Server
 {
     class FunkcijeServer : IFunkcije
     {
-        public void funkcija1(string a, double b)
+        private DataAccess da;
+        public void funkcija1(Komponenta k)
         {
-            using (MySqlConnection con = new MySqlConnection("server = localhost; user id = root; password = root; database = res_team_15"))
-            { 
-                MySqlCommand cmd = new MySqlCommand($"insert into funkcija1(vreme_proracuna, poslednje_merenje, prosecna_potrosnja) values('{a}', '{DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss")}', {b})", con);
-                con.Open();
-                cmd.ExecuteNonQuery();
-                con.Close();
-            }
+            da.min(k);
         }
 
-        public void funkcija2(string a, double b)
+        public void funkcija2(Komponenta k)
         {
-            using (MySqlConnection con = new MySqlConnection("server = localhost; user id = root; password = root; database = res_team_15"))
-            {
-                MySqlCommand cmd = new MySqlCommand($"insert into funkcija2(vreme_proracuna, poslednje_merenje, minimalna_potrosnja) values('{a}', '{DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss")}', {b})", con);
-                con.Open();
-                cmd.ExecuteNonQuery();
-                con.Close();
-            }
+            da.max(k);
         }
 
-        public void funkcija3(string a, double b)
+        public void funkcija3(Komponenta k)
         {
-            using (MySqlConnection con = new MySqlConnection("server = localhost; user id = root; password = root; database = res_team_15"))
-            {
-                MySqlCommand cmd = new MySqlCommand($"insert into funkcija3(vreme_proracuna, poslednje_merenje, maksimalna_potrosnja) values('{a}', '{DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss")}', {b})", con);
-                con.Open();
-                cmd.ExecuteNonQuery();
-                con.Close();
-            }
+            da.dev(k);
         }
     }
 }
