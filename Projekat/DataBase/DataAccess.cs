@@ -12,7 +12,7 @@ namespace DataBase
     public class DataAccess
     {
 
-        public void min(Racunanje m)
+        public void Min(Racunanje m)
         {
             using (MySqlConnection con = new MySqlConnection("server = localhost; user id = root; password = root; database = res_team_15"))
             {
@@ -23,7 +23,7 @@ namespace DataBase
             }
         }
 
-        public void max(Racunanje m)
+        public void Max(Racunanje m)
         {
             using (MySqlConnection con = new MySqlConnection("server = localhost; user id = root; password = root; database = res_team_15"))
             {
@@ -34,7 +34,7 @@ namespace DataBase
             }
         }
 
-        public void dev(Racunanje m)
+        public void Avg(Racunanje m)
         {
             using (MySqlConnection con = new MySqlConnection("server = localhost; user id = root; password = root; database = res_team_15"))
             {
@@ -45,7 +45,7 @@ namespace DataBase
             }
         }
 
-        public void upisi(string gde, string sta)
+        public void Upisi(string gde, string sta)
         {
             using (MySqlConnection con = new MySqlConnection("server = localhost; user id = root; password = root; database = res_team_15"))
             {
@@ -77,6 +77,25 @@ namespace DataBase
         
         }
 
+        public void UpisiVrednostiZaRegion(string region, DateTime datum_vreme, double vrednost)
+        {
+            using (MySqlConnection con = new MySqlConnection("server = localhost; user id = root; password = root; database = res_team_15"))
+            {
+                con.Open();
+
+                string komanda = "UPDATE merenja SET vrednost = ?vrednost, vreme = ?vreme WHERE naziv = ?region";
+
+                MySqlCommand cmd = new MySqlCommand(komanda, con);
+
+                cmd.Parameters.Add(new MySqlParameter("vrednost", vrednost));
+                cmd.Parameters.Add(new MySqlParameter("vreme", datum_vreme.ToString()));
+                cmd.Parameters.Add(new MySqlParameter("region", region));
+
+                cmd.ExecuteNonQuery();
+                con.Close();
+            }
+        }
+
         public List<Merenje> DobaviMerenja()
         {
             List<Merenje> lista = new List<Merenje>();
@@ -93,14 +112,46 @@ namespace DataBase
                 {
                     while (rd.Read())
                     {
-                        Merenje m = new Merenje();
+                        Merenje temp = new Merenje();
+
+                        //temp.Id = Int32.Parse((rd.GetValue(0).ToString()));
+                        temp.Naziv = rd.GetValue(1).ToString();
+                        temp.Vreme = DateTime.Parse(rd.GetValue(2).ToString());
+                        temp.Vrednost = Double.Parse(rd.GetValue(3).ToString());
+
+                        lista.Add(temp);
+                    }
+                }
+            }
+
+            return lista;
+        }
+
+        public List<Racunanje> DobaviRacunanja()
+        {
+            List<Racunanje> lista = new List<Racunanje>();
+
+            using (MySqlConnection con = new MySqlConnection("server = localhost; user id = root; password = root; database = res_team_15"))
+            {
+                con.Open();
+
+                string komanda = "SELECT * FROM racunanja";
+
+                MySqlCommand cmd = new MySqlCommand(komanda, con);
+
+                using (MySqlDataReader rd = cmd.ExecuteReader())
+                {
+                    while (rd.Read())
+                    {
+                        Racunanje temp = new Racunanje();
 
                         //m.Id = Int32.Parse((rd.GetValue(0).ToString()));
-                        m.Naziv = rd.GetValue(1).ToString();
-                        m.Vreme = DateTime.Parse(rd.GetValue(2).ToString());
-                        m.Vrednost = Double.Parse(rd.GetValue(3).ToString());
+                        temp.Naziv = rd.GetValue(1).ToString();
+                        temp.VremeProracuna = DateTime.Parse(rd.GetValue(2).ToString());
+                        temp.PoslednjeVreme = DateTime.Parse(rd.GetValue(3).ToString());
+                        temp.Vrednost = Double.Parse(rd.GetValue(4).ToString());
 
-                        lista.Add(m);
+                        lista.Add(temp);
                     }
                 }
             }
