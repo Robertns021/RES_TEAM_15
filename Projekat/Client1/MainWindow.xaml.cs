@@ -38,7 +38,7 @@ namespace Client1
             if(textBox.Text.Trim().Equals("") || textBox1.Text.Trim().Equals("") || textBox2.Text.Trim().Equals(""))
                 MessageBox.Show("Podaci nisu dobro popunjeni", "Greska!", MessageBoxButton.OK, MessageBoxImage.Error);
             else
-                k.Upisi(textBox.Text,Convert.ToDateTime(textBox1.Text), Convert.ToDouble(textBox2.Text));
+                k.Upisi(textBox2.Text,Convert.ToDateTime(textBox.Text), Convert.ToDouble(textBox1.Text));
             //todo
             //Slanje podataka
         }
