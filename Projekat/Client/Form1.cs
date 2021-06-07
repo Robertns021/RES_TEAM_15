@@ -24,5 +24,10 @@ namespace Client
             //TODO
             //Saljemo datum(dateTimePicker1) i potrosnju(textBox1)
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
