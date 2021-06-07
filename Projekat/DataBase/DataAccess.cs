@@ -185,11 +185,11 @@ namespace DataBase
                     {
                         Racunanje temp = new Racunanje();
 
-                        //m.Id = Int32.Parse((rd.GetValue(0).ToString()));
+                        temp.Id = Convert.ToInt32(rd.GetValue(0).ToString());
                         temp.Naziv = rd.GetValue(1).ToString();
-                        temp.VremeProracuna = DateTime.Parse(rd.GetValue(2).ToString());
-                        temp.PoslednjeVreme = DateTime.Parse(rd.GetValue(3).ToString());
-                        temp.Vrednost = Double.Parse(rd.GetValue(4).ToString());
+                        temp.Vrednost = Double.Parse(rd.GetValue(2).ToString());
+                        temp.VremeProracuna = DateTime.Parse(rd.GetValue(3).ToString());
+                        temp.PoslednjeVreme = DateTime.Parse(rd.GetValue(4).ToString());
 
                         lista.Add(temp);
                     }

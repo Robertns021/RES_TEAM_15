@@ -9,7 +9,7 @@ using DataBase;
 
 namespace Server
 {
-    class FunkcijeServer : IFunkcije
+    public class FunkcijeServer : IFunkcije
     {
         private static DataAccess da = new DataAccess(); // static?
         private static List<DateTime> poslednjeVremeProracunaList = new List<DateTime> { DateTime.Now, DateTime.Now, DateTime.Now };

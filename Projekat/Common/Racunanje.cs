@@ -14,7 +14,7 @@ namespace Common
     {
         public static int last = 0;
         [DataMember]
-        public int Id { get; }
+        public int Id { get; set; }
         [DataMember]
         public string Naziv { get; set; }
         [DataMember]

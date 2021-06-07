@@ -17,10 +17,10 @@ namespace ResidentExecutor
         static void Main(string[] args)
         {
 
-            int vreme;
-            bool f1;
-            bool f2;
-            bool f3;
+            int vreme = 1000;
+            bool f1 = true;
+            bool f2 = true;
+            bool f3 = true;
 
 
             ChannelFactory<IFunkcije> channel;

@@ -24,6 +24,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		ResidentExecutor\Log\LogFunkcija.TXT = ResidentExecutor\Log\LogFunkcija.TXT
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Server2", "Server2\Server2.csproj", "{9B8F6C10-9368-496F-9B07-1F256817CC0A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RE", "RE\RE.csproj", "{68FB736B-CC63-48F4-9527-58FB25A947D6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -62,6 +66,14 @@ Global
 		{508BB515-8E7C-402E-9E64-12DE61ACEA98}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{508BB515-8E7C-402E-9E64-12DE61ACEA98}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{508BB515-8E7C-402E-9E64-12DE61ACEA98}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B8F6C10-9368-496F-9B07-1F256817CC0A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B8F6C10-9368-496F-9B07-1F256817CC0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B8F6C10-9368-496F-9B07-1F256817CC0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B8F6C10-9368-496F-9B07-1F256817CC0A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68FB736B-CC63-48F4-9527-58FB25A947D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68FB736B-CC63-48F4-9527-58FB25A947D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68FB736B-CC63-48F4-9527-58FB25A947D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68FB736B-CC63-48F4-9527-58FB25A947D6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
