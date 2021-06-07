@@ -9,7 +9,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Xml;
 using Common;
-using Funkcije;
+using FunkcijeProjekat;
 
 namespace ResidentExecutor
 {
@@ -17,7 +17,7 @@ namespace ResidentExecutor
     {
         static void Main(string[] args)
         {
-            Funkcije.Funkcije f = new Funkcije.Funkcije();
+            Funkcije f = new Funkcije();
 
             int vreme = Convert.ToInt32(ConfigurationManager.AppSettings["vreme"]);
             bool f1 = Convert.ToBoolean(ConfigurationManager.AppSettings["f1"]);

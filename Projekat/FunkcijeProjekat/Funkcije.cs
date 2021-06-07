@@ -7,7 +7,7 @@ using Common;
 using DataBase;
 using System.ServiceModel;
 
-namespace Funkcije
+namespace FunkcijeProjekat
 {
     public class Funkcije : IFunkcije
     {
