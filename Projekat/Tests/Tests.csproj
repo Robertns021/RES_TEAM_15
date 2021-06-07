@@ -60,6 +60,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataAccessTest.cs" />
     <Compile Include="FunkcijeTest.cs" />
     <Compile Include="MerenjeTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
