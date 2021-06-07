@@ -14,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using DAKlijent;
+using Common;
 
 namespace Client1
 {
@@ -28,7 +29,10 @@ namespace Client1
         DataAccessKlijent da = new DataAccessKlijent();
         public View()
         {
-            dataGrid.ItemsSource = da.Procitaj();
+            List<Racunanje> lista = new List<Racunanje>();
+            lista = da.Procitaj();
+            if(lista != null)
+                dataGrid.ItemsSource = lista;
             /*DataSet = serializer.DeSerializeObject<BindingList<Common.Racunanje>>("dataset.xml");
             if (DataSet == null)
             {
