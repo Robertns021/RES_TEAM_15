@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataBase;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -22,13 +23,15 @@ namespace Client1
     {
         private DataIO serializer = new DataIO();
         public static BindingList<Common.Racunanje> DataSet { get; set; }
+        DataAccess da = new DataAccess();
         public View()
         {
-            DataSet = serializer.DeSerializeObject<BindingList<Common.Racunanje>>("dataset.xml");
+            dataGrid.ItemsSource = da.DobaviRacunanja();
+            /*DataSet = serializer.DeSerializeObject<BindingList<Common.Racunanje>>("dataset.xml");
             if (DataSet == null)
             {
                 DataSet = new BindingList<Common.Racunanje>();
-            }
+            }*/
             InitializeComponent();
             DataContext = this;
         }
