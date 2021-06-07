@@ -9,6 +9,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Xml;
 using Common;
+using Funkcije;
 
 namespace ResidentExecutor
 {
@@ -16,23 +17,13 @@ namespace ResidentExecutor
     {
         static void Main(string[] args)
         {
+            Funkcije.Funkcije f = new Funkcije.Funkcije();
 
-            int vreme = 1000;
-            bool f1 = true;
-            bool f2 = true;
-            bool f3 = true;
+            int vreme = Convert.ToInt32(ConfigurationManager.AppSettings["vreme"]);
+            bool f1 = Convert.ToBoolean(ConfigurationManager.AppSettings["f1"]);
+            bool f2 = Convert.ToBoolean(ConfigurationManager.AppSettings["f2"]);
+            bool f3 = Convert.ToBoolean(ConfigurationManager.AppSettings["f3"]);
 
-
-            ChannelFactory<IFunkcije> channel;
-            IFunkcije proxy;
-
-            channel = new ChannelFactory<IFunkcije>("ServiceFunkcije");
-            vreme = Convert.ToInt32(ConfigurationManager.AppSettings["vreme"]);
-            f1 = Convert.ToBoolean(ConfigurationManager.AppSettings["f1"]);
-            f2 = Convert.ToBoolean(ConfigurationManager.AppSettings["f2"]);
-            f3 = Convert.ToBoolean(ConfigurationManager.AppSettings["f3"]);
-            proxy = channel.CreateChannel();
-            proxy.FunkcijaMin();
             Console.ReadLine();
 
             Thread t = new Thread(Process);
@@ -41,17 +32,16 @@ namespace ResidentExecutor
 
             void Process()
             {
-                proxy = channel.CreateChannel();
                 while (true)
                 {
                     try
                     {
                         if (f1)
-                            UpisiULogFunkcija(proxy.FunkcijaMin());
+                            UpisiULogFunkcija(f.FunkcijaMin());
                         if (f2)
-                            UpisiULogFunkcija(proxy.FunkcijaMax());
+                            UpisiULogFunkcija(f.FunkcijaMax());
                         if (f3)
-                            UpisiULogFunkcija(proxy.FunkcijaAvg());
+                            UpisiULogFunkcija(f.FunkcijaAvg());
                     }
                     catch (Exception e)
                     {
