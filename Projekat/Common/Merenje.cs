@@ -10,9 +10,6 @@ namespace Common
     [DataContract]
     public class Merenje
     {
-        public static int last = 0;
-        [DataMember]
-        public int Id { get; }
         [DataMember]
         public string Naziv { get; set; }
         [DataMember]
@@ -23,7 +20,6 @@ namespace Common
 
         public Merenje(string naziv = "", double vrednost = 0)
         {
-            Id = last++;
             Naziv = naziv;
             Vrednost = vrednost;
             Vreme = DateTime.Now;

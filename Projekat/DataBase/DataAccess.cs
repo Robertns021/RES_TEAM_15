@@ -154,7 +154,6 @@ namespace DataBase
                     {
                         Merenje temp = new Merenje();
 
-                        //temp.Id = Int32.Parse((rd.GetValue(0).ToString()));
                         temp.Naziv = rd.GetValue(0).ToString();
                         temp.Vrednost = Double.Parse(rd.GetValue(1).ToString());
                         temp.Vreme = DateTime.Parse(rd.GetValue(2).ToString());

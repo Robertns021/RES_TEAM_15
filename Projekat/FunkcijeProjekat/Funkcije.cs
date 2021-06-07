@@ -12,7 +12,7 @@ namespace FunkcijeProjekat
     public class Funkcije : IFunkcije
     {
         private static DataAccess da = new DataAccess(); // static?
-        private static List<DateTime> poslednjeVremeProracunaList = new List<DateTime> { DateTime.Now, DateTime.Now, DateTime.Now };
+        private static List<DateTime> poslednjeVremeProracunaList = new List<DateTime> { Convert.ToDateTime("6 / 7 / 2021 10:04:26"), Convert.ToDateTime("6 / 7 / 2021 10:04:26"), Convert.ToDateTime("6 / 7 / 2021 10:04:26") };
 
         public Racunanje FunkcijaMin()
         {
@@ -119,7 +119,7 @@ namespace FunkcijeProjekat
 
         private List<Merenje> PreuzmiDanasnja(List<Merenje> list)
         {
-            int danas = DateTime.Now.Day;
+            int danas = DateTime.Now.Day; // u slucaju da je 23:59:59 moze preci na sledeci dan u toku izvrsavanja foreach petlje
             List<Merenje> ret = new List<Merenje>();
             foreach (var item in list)
             {
