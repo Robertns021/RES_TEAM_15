@@ -4,16 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{5131E9DE-AE96-4275-B990-497F184AA2AA}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>Projekat</RootNamespace>
-    <AssemblyName>Projekat</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <ProjectGuid>{73515EBF-1D39-42F1-A127-CD6C59AACE7E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DAKlijent</RootNamespace>
+    <AssemblyName>DAKlijent</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,7 +23,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -42,25 +41,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataAccess.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="DataAccessKlijent.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Common\Common.csproj">
       <Project>{8b9a1228-3bca-4482-b589-e685ef98a720}</Project>
       <Name>Common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\DAKlijent\DAKlijent.csproj">
-      <Project>{73515ebf-1d39-42f1-a127-cd6c59aace7e}</Project>
-      <Name>DAKlijent</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ResidentExecutor\ResidentExecutor.csproj">
-      <Project>{1a14239d-ab04-4cda-baf0-a07012cbfaef}</Project>
-      <Name>ResidentExecutor</Name>
+    <ProjectReference Include="..\DataBase\DataBase.csproj">
+      <Project>{8de0f8b4-cb0c-4271-a826-914a28df9dfc}</Project>
+      <Name>DataBase</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

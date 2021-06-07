@@ -14,10 +14,10 @@ namespace Server
         private static DataAccess da = new DataAccess(); // static?
         private static List<DateTime> poslednjeVremeProracunaList = new List<DateTime> { DateTime.Now, DateTime.Now, DateTime.Now };
 
-        public void funkcija1(Merenje m)
+        public Racunanje funkcijaMin()
         {
             if (poslednjeVremeProracunaList[0] >= da.DobaviPoslednjeVreme())
-                return;
+                return null;
 
             List<Merenje> list = da.DobaviMerenja();
             List<Merenje> danas = PreuzmiDanasnja(list);
@@ -41,13 +41,15 @@ namespace Server
             r.Naziv = "";
             r.PoslednjeVreme = da.DobaviPoslednjeVreme();
             r.VremeProracuna = DateTime.Now;
+            poslednjeVremeProracunaList[0] = r.VremeProracuna;
             da.Min(r);
+            return r;
         }
 
-        public void funkcija2(Merenje m)
+        public Racunanje funkcijaMax()
         {
             if (poslednjeVremeProracunaList[1] >= da.DobaviPoslednjeVreme())
-                return;
+                return null;
 
             List<Merenje> list = da.DobaviMerenja();
             List<Merenje> danas = PreuzmiDanasnja(list);
@@ -71,13 +73,15 @@ namespace Server
             r.Naziv = "";
             r.PoslednjeVreme = da.DobaviPoslednjeVreme();
             r.VremeProracuna = DateTime.Now;
+            poslednjeVremeProracunaList[1] = r.VremeProracuna;
             da.Max(r);
+            return r;
         }
 
-        public void funkcija3(Merenje m)
+        public Racunanje funkcijaAvg()
         {
             if (poslednjeVremeProracunaList[2] >= da.DobaviPoslednjeVreme())
-                return;
+                return null;
 
             List<Merenje> list = da.DobaviMerenja();
             List<Merenje> danas = PreuzmiDanasnja(list);
@@ -100,7 +104,9 @@ namespace Server
             r.Naziv = "";
             r.PoslednjeVreme = da.DobaviPoslednjeVreme();
             r.VremeProracuna = DateTime.Now;
+            poslednjeVremeProracunaList[2] = r.VremeProracuna;
             da.Avg(r);
+            return r;
         }
 
         private List<Merenje> PreuzmiDanasnja(List<Merenje> list)

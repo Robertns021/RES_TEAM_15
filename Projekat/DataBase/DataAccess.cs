@@ -177,26 +177,5 @@ namespace DataBase
             }
         }
 
-        public string DobaviLogFunkcija()
-        {
-            string str = "";
-
-            string putanja = "C:\\Users\\Ivica\\RES_TEAM_15\\Projekat\\Datoteke";
-
-            using (StreamReader sr = new StreamReader(putanja + "\\LogFunkcija.TXT"))
-            {
-                string linija;
-                while ((linija = sr.ReadLine()) != null)
-                {
-                    str = str + linija;
-                }
-                sr.Close();
-            }
-
-
-
-            return str;
-        }
-
     }
 }

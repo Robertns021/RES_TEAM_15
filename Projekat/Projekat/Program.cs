@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+// ResidentExecutor;
+//using Common;
+//using DAKlijent;
 
 namespace Projekat
 {
@@ -10,6 +13,8 @@ namespace Projekat
     {
         static void Main(string[] args)
         {
+        //    REA rea = new REA();
+      //      rea.Execute();
             Console.ReadKey();
         }
     }
