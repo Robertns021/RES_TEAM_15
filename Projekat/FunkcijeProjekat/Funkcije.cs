@@ -27,6 +27,7 @@ namespace FunkcijeProjekat
             {
                 Console.WriteLine("Nema danasnjih merenja");
                 r.Vrednost = 0;
+                r.Naziv = "";
             }
             else
             {
@@ -37,11 +38,12 @@ namespace FunkcijeProjekat
                         min = item;
                 }
                 r.Vrednost = min.Vrednost;
+                r.Naziv = min.Naziv;
             }
-            r.Naziv = "";
             r.PoslednjeVreme = da.DobaviPoslednjeVreme();
             r.VremeProracuna = DateTime.Now;
             poslednjeVremeProracunaList[0] = r.VremeProracuna;
+            r.Id = DataAccess.id;
             da.UpisiURacunanja(r);
             return r;
         }
@@ -59,6 +61,8 @@ namespace FunkcijeProjekat
             {
                 Console.WriteLine("Nema danasnjih merenja");
                 r.Vrednost = 0;
+                r.Naziv = "";
+
             }
             else
             {
@@ -69,11 +73,13 @@ namespace FunkcijeProjekat
                         max = item;
                 }
                 r.Vrednost = max.Vrednost;
+                r.Naziv = max.Naziv;
+
             }
-            r.Naziv = "";
             r.PoslednjeVreme = da.DobaviPoslednjeVreme();
             r.VremeProracuna = DateTime.Now;
             poslednjeVremeProracunaList[1] = r.VremeProracuna;
+            r.Id = DataAccess.id;
             da.UpisiURacunanja(r);
             return r;
         }
@@ -100,11 +106,13 @@ namespace FunkcijeProjekat
                     sum += item.Vrednost;
                 }
                 r.Vrednost = sum / danas.Count();
+
             }
             r.Naziv = "";
             r.PoslednjeVreme = da.DobaviPoslednjeVreme();
             r.VremeProracuna = DateTime.Now;
             poslednjeVremeProracunaList[2] = r.VremeProracuna;
+            r.Id = DataAccess.id;
             da.UpisiURacunanja(r);
             return r;
         }

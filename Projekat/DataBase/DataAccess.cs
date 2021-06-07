@@ -12,7 +12,7 @@ namespace DataBase
     public class DataAccess
     {
         private static string pass = "ivica baza";
-        private static int id;
+        public static int id;
 
         public DataAccess()
         {

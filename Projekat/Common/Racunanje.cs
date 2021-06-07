@@ -12,7 +12,6 @@ namespace Common
     [DataContract]
     public class Racunanje
     {
-        public static int last = 0;
         [DataMember]
         public int Id { get; set; }
         [DataMember]
@@ -24,11 +23,11 @@ namespace Common
         [DataMember]
         public DateTime PoslednjeVreme { get; set; }
 
-        public Racunanje() { Id = last++; }
+        public Racunanje() { Id = 0; }
 
         public Racunanje(string naziv, double vrednost, DateTime vreme_proracuna, DateTime poslednje_vreme)
         {
-            Id = last++;
+            Id = 0;
             Naziv = naziv;
             Vrednost = vrednost;
             VremeProracuna = vreme_proracuna;
