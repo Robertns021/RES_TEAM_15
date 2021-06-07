@@ -5,14 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Client1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="190" Width="299">
-    <Grid>
+        Title="MainWindow" Height="203" Width="299">
+    <Grid Margin="0,0,0,-1">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="187*"/>
+            <ColumnDefinition Width="104*"/>
+        </Grid.ColumnDefinitions>
         <Label x:Name="label" Content="Datum:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="16"/>
         <Label x:Name="label1" Content="Potrosnja:" HorizontalAlignment="Left" Margin="10,46,0,0" VerticalAlignment="Top" FontSize="16"/>
-        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="31" Margin="114,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="157" FontSize="16"/>
-        <TextBox x:Name="textBox1" HorizontalAlignment="Left" Height="31" Margin="114,46,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="157" FontSize="16"/>
-        <Button x:Name="button" Content="Dodaj" HorizontalAlignment="Left" Height="40" Margin="10,92,0,0" VerticalAlignment="Top" Width="79" Click="Button_Click"/>
-        <Button x:Name="button1" Content="View" HorizontalAlignment="Left" Height="40" Margin="186,92,0,0" VerticalAlignment="Top" Width="85" Click="Button1_Click"/>
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="31" Margin="114,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="157" FontSize="16" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="textBox1" HorizontalAlignment="Left" Height="31" Margin="114,46,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="157" FontSize="16" Grid.ColumnSpan="2"/>
+        <Button x:Name="button" Content="Dodaj" HorizontalAlignment="Left" Height="40" Margin="10,118,0,0" VerticalAlignment="Top" Width="79" Click="Button_Click"/>
+        <Button x:Name="button1" Content="View" HorizontalAlignment="Left" Height="40" Margin="186,118,0,0" VerticalAlignment="Top" Width="85" Click="Button1_Click" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="textBox2" HorizontalAlignment="Left" Height="31" Margin="114,82,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="157" FontSize="16" Grid.ColumnSpan="2"/>
+        <Label x:Name="label2" Content="Region:" HorizontalAlignment="Left" Margin="10,77,0,0" VerticalAlignment="Top" FontSize="16"/>
 
     </Grid>
 </Window>

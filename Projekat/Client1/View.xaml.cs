@@ -13,6 +13,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using DAKlijent;
 
 namespace Client1
 {
@@ -21,12 +22,13 @@ namespace Client1
     /// </summary>
     public partial class View : Window
     {
-        private DataIO serializer = new DataIO();
+        /*private DataIO serializer = new DataIO();
         public static BindingList<Common.Racunanje> DataSet { get; set; }
-        DataAccess da = new DataAccess();
+        DataAccess da = new DataAccess();*/
+        DataAccessKlijent da = new DataAccessKlijent();
         public View()
         {
-            dataGrid.ItemsSource = da.DobaviRacunanja();
+            dataGrid.ItemsSource = da.Procitaj();
             /*DataSet = serializer.DeSerializeObject<BindingList<Common.Racunanje>>("dataset.xml");
             if (DataSet == null)
             {
