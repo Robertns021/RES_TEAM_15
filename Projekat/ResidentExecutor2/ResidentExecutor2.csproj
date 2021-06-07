@@ -4,14 +4,14 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{5131E9DE-AE96-4275-B990-497F184AA2AA}</ProjectGuid>
+    <ProjectGuid>{104DE71A-81AE-4C94-8DA3-521AE9BC0BF0}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Projekat</RootNamespace>
-    <AssemblyName>Projekat</AssemblyName>
+    <RootNamespace>ResidentExecutor2</RootNamespace>
+    <AssemblyName>ResidentExecutor2</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -43,7 +44,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataAccess.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -55,13 +55,9 @@
       <Project>{8b9a1228-3bca-4482-b589-e685ef98a720}</Project>
       <Name>Common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\DAKlijent\DAKlijent.csproj">
-      <Project>{73515ebf-1d39-42f1-a127-cd6c59aace7e}</Project>
-      <Name>DAKlijent</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ResidentExecutor\ResidentExecutor.csproj">
-      <Project>{1a14239d-ab04-4cda-baf0-a07012cbfaef}</Project>
-      <Name>ResidentExecutor</Name>
+    <ProjectReference Include="..\Server\Server.csproj">
+      <Project>{e2831335-adf1-4a63-9e7a-da56525bd1c9}</Project>
+      <Name>Server</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

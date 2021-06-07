@@ -11,12 +11,12 @@ namespace Common
     public interface IFunkcije
     {
         [OperationContract]
-        Racunanje funkcijaMin(); //Upisuje se vreme pa potrosnja
+        Racunanje FunkcijaMin(); //Upisuje se vreme pa potrosnja
 
         [OperationContract]
-        Racunanje funkcijaMax(); //Upisuje se vreme pa potrosnja
+        Racunanje FunkcijaMax(); //Upisuje se vreme pa potrosnja
 
         [OperationContract]
-        Racunanje funkcijaAvg(); //Upisuje se vreme pa potrosnja
+        Racunanje FunkcijaAvg(); //Upisuje se vreme pa potrosnja
     }
 }

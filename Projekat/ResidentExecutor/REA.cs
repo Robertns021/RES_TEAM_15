@@ -13,18 +13,22 @@ namespace ResidentExecutor
 {
     public class REA
     {
-        readonly int vreme = Convert.ToInt32(ConfigurationManager.AppSettings["vreme"]);
-        readonly bool f1 = Convert.ToBoolean(ConfigurationManager.AppSettings["f1"]);
-        readonly bool f2 = Convert.ToBoolean(ConfigurationManager.AppSettings["f2"]);
-        readonly bool f3 = Convert.ToBoolean(ConfigurationManager.AppSettings["f3"]);
-        
+        int vreme;
+        bool f1;
+        bool f2;
+        bool f3;
 
-        ChannelFactory<IFunkcije> channel = new ChannelFactory<IFunkcije>("ServiceFunkcije");
+
+        ChannelFactory<IFunkcije> channel;
         IFunkcije proxy;
 
         public REA()
         {
-            proxy = channel.CreateChannel();
+            channel = new ChannelFactory<IFunkcije>("ServiceFunkcije");
+            vreme = Convert.ToInt32(ConfigurationManager.AppSettings["vreme"]);
+            f1 = Convert.ToBoolean(ConfigurationManager.AppSettings["f1"]);
+            f2 = Convert.ToBoolean(ConfigurationManager.AppSettings["f2"]);
+            f3 = Convert.ToBoolean(ConfigurationManager.AppSettings["f3"]);
         }
 
         public void Execute()
@@ -36,15 +40,22 @@ namespace ResidentExecutor
 
         private void Process()
         {
+            proxy = channel.CreateChannel();
             while (true)
             {
-                if (f1)
-                    UpisiULogFunkcija(proxy.funkcijaMin());
-                if (f2)
-                    UpisiULogFunkcija(proxy.funkcijaMax());
-                if (f3)
-                    UpisiULogFunkcija(proxy.funkcijaAvg());
-
+                try
+                {
+                    if (f1)
+                        UpisiULogFunkcija(proxy.FunkcijaMin());
+                    if (f2)
+                        UpisiULogFunkcija(proxy.FunkcijaMax());
+                    if (f3)
+                        UpisiULogFunkcija(proxy.FunkcijaAvg());
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                }
                 Console.WriteLine($"pauza {vreme / 1000} sekundi \n\n");
                 Thread.Sleep(vreme);
             }

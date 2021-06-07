@@ -14,7 +14,7 @@ namespace Server
         private static DataAccess da = new DataAccess(); // static?
         private static List<DateTime> poslednjeVremeProracunaList = new List<DateTime> { DateTime.Now, DateTime.Now, DateTime.Now };
 
-        public Racunanje funkcijaMin()
+        public Racunanje FunkcijaMin()
         {
             if (poslednjeVremeProracunaList[0] >= da.DobaviPoslednjeVreme())
                 return null;
@@ -42,11 +42,11 @@ namespace Server
             r.PoslednjeVreme = da.DobaviPoslednjeVreme();
             r.VremeProracuna = DateTime.Now;
             poslednjeVremeProracunaList[0] = r.VremeProracuna;
-            da.Min(r);
+            da.UpisiURacunanja(r);
             return r;
         }
 
-        public Racunanje funkcijaMax()
+        public Racunanje FunkcijaMax()
         {
             if (poslednjeVremeProracunaList[1] >= da.DobaviPoslednjeVreme())
                 return null;
@@ -74,11 +74,11 @@ namespace Server
             r.PoslednjeVreme = da.DobaviPoslednjeVreme();
             r.VremeProracuna = DateTime.Now;
             poslednjeVremeProracunaList[1] = r.VremeProracuna;
-            da.Max(r);
+            da.UpisiURacunanja(r);
             return r;
         }
 
-        public Racunanje funkcijaAvg()
+        public Racunanje FunkcijaAvg()
         {
             if (poslednjeVremeProracunaList[2] >= da.DobaviPoslednjeVreme())
                 return null;
@@ -105,7 +105,7 @@ namespace Server
             r.PoslednjeVreme = da.DobaviPoslednjeVreme();
             r.VremeProracuna = DateTime.Now;
             poslednjeVremeProracunaList[2] = r.VremeProracuna;
-            da.Avg(r);
+            da.UpisiURacunanja(r);
             return r;
         }
 
