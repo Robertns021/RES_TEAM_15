@@ -31,6 +31,7 @@ namespace Client1
             }
             catch (Exception ex)
             {
+                throw ex;
                 //Log exception here
             }
         }
@@ -65,6 +66,7 @@ namespace Client1
             }
             catch (Exception ex)
             {
+                throw ex;
                 //Log exception here
             }
 

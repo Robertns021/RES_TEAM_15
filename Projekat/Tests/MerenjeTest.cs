@@ -5,11 +5,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Common;
+using DataBase;
 
 namespace Tests
 {
     [TestFixture]
-    class MerenjeTest
+    class MerenjeTest 
     {
         [Test]
         public void NazivTest()

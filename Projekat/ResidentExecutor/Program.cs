@@ -9,6 +9,7 @@ using System.Threading;
 using System.Xml;
 using Common;
 using FunkcijeProjekat;
+using DataBase;
 
 namespace ResidentExecutor
 {
@@ -17,6 +18,8 @@ namespace ResidentExecutor
         static void Main(string[] args)
         {
             Funkcije f = new Funkcije();
+            IDataAccess da = new DataAccess();
+            IRacunanje ra = new Racunanje();
 
             int vreme = Convert.ToInt32(ConfigurationManager.AppSettings["vreme"]);
             bool f1 = Convert.ToBoolean(ConfigurationManager.AppSettings["f1"]);
@@ -28,11 +31,11 @@ namespace ResidentExecutor
                 try
                 {
                     if (f1)
-                        UpisiULogFunkcija(f.FunkcijaMin());
+                        UpisiULogFunkcija(f.FunkcijaMin(da,ra));
                     if (f2)
-                        UpisiULogFunkcija(f.FunkcijaMax());
+                        UpisiULogFunkcija(f.FunkcijaMax(da,ra));
                     if (f3)
-                        UpisiULogFunkcija(f.FunkcijaAvg());
+                        UpisiULogFunkcija(f.FunkcijaAvg(da,ra));
                 }
                 catch (Exception e)
                 {
@@ -43,9 +46,6 @@ namespace ResidentExecutor
                 Thread.Sleep(vreme);
             }
 
-            Console.ReadLine();
-
-            return;
 
 
             //Nacin upisivSqlConnectioanja u DB za svaku tabelu su prva dva parametra ista a poslednji se menja
@@ -82,7 +82,7 @@ namespace ResidentExecutor
             return str;
         }
 
-        static bool UpisiULogFunkcija(Racunanje racunanje)
+        static bool UpisiULogFunkcija(IRacunanje racunanje)
         {
             if (racunanje == null)
                 return false;

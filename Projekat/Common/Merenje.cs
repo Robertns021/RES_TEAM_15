@@ -10,11 +10,8 @@ namespace Common
     [DataContract]
     public class Merenje
     {
-        [DataMember]
         public string Naziv { get; set; }
-        [DataMember]
         public double Vrednost { get; set; }
-        [DataMember]
         public DateTime Vreme { get; set; }
 
 

@@ -70,10 +70,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Client1\Client1.csproj">
-      <Project>{508bb515-8e7c-402e-9e64-12de61acea98}</Project>
-      <Name>Client1</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Common\Common.csproj">
       <Project>{8b9a1228-3bca-4482-b589-e685ef98a720}</Project>
       <Name>Common</Name>
@@ -89,10 +85,6 @@
     <ProjectReference Include="..\FunkcijeProjekat\FunkcijeProjekat.csproj">
       <Project>{3a1200bb-79d1-4150-b791-ba2aed8d7382}</Project>
       <Name>FunkcijeProjekat</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Projekat\Projekat.csproj">
-      <Project>{5131e9de-ae96-4275-b990-497f184aa2aa}</Project>
-      <Name>Projekat</Name>
     </ProjectReference>
     <ProjectReference Include="..\ResidentExecutor\ResidentExecutor.csproj">
       <Project>{1a14239d-ab04-4cda-baf0-a07012cbfaef}</Project>

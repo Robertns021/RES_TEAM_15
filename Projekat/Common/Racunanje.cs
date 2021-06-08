@@ -9,18 +9,12 @@ using System.Runtime.Serialization;
 
 namespace Common
 {
-    [DataContract]
-    public class Racunanje
+    public class Racunanje : IRacunanje
     {
-        [DataMember]
         public int Id { get; set; }
-        [DataMember]
         public string Naziv { get; set; }
-        [DataMember]
         public double Vrednost { get; set; }
-        [DataMember]
         public DateTime VremeProracuna { get; set; }
-        [DataMember]
         public DateTime PoslednjeVreme { get; set; }
 
         public Racunanje() { Id = 0; }

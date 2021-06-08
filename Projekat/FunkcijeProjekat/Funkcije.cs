@@ -11,17 +11,15 @@ namespace FunkcijeProjekat
 {
     public class Funkcije : IFunkcije
     {
-        private static DataAccess da = new DataAccess(); // static?
         private static List<DateTime> poslednjeVremeProracunaList = new List<DateTime> { Convert.ToDateTime("6 / 7 / 2021 10:04:26"), Convert.ToDateTime("6 / 7 / 2021 10:04:26"), Convert.ToDateTime("6 / 7 / 2021 10:04:26") };
 
-        public Racunanje FunkcijaMin()
+        public IRacunanje FunkcijaMin(IDataAccess da,IRacunanje r)
         {
             if (poslednjeVremeProracunaList[0] >= da.DobaviPoslednjeVreme())
                 return null;
 
             List<Merenje> list = da.DobaviMerenja();
             List<Merenje> danas = PreuzmiDanasnja(list);
-            Racunanje r = new Racunanje();
 
             if (danas.Count() == 0)
             {
@@ -48,14 +46,13 @@ namespace FunkcijeProjekat
             return r;
         }
 
-        public Racunanje FunkcijaMax()
+        public IRacunanje FunkcijaMax(IDataAccess da, IRacunanje r)
         {
             if (poslednjeVremeProracunaList[1] >= da.DobaviPoslednjeVreme())
                 return null;
 
             List<Merenje> list = da.DobaviMerenja();
             List<Merenje> danas = PreuzmiDanasnja(list);
-            Racunanje r = new Racunanje();
 
             if (danas.Count() == 0)
             {
@@ -84,14 +81,13 @@ namespace FunkcijeProjekat
             return r;
         }
 
-        public Racunanje FunkcijaAvg()
+        public IRacunanje FunkcijaAvg(IDataAccess da, IRacunanje r)
         {
             if (poslednjeVremeProracunaList[2] >= da.DobaviPoslednjeVreme())
                 return null;
 
             List<Merenje> list = da.DobaviMerenja();
             List<Merenje> danas = PreuzmiDanasnja(list);
-            Racunanje r = new Racunanje();
 
             if (danas.Count() == 0)
             {

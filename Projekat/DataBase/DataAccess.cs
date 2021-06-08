@@ -9,7 +9,7 @@ using System.IO;
 
 namespace DataBase
 {
-    public class DataAccess
+    public class DataAccess : IDataAccess
     {
         private static string pass = "ivica baza";
         public static int id;
@@ -19,7 +19,7 @@ namespace DataBase
             OdrediId();
         }
 
-        public void UpisiURacunanja(Racunanje temp)
+        public void UpisiURacunanja(IRacunanje temp)
         {
             using (MySqlConnection con = new MySqlConnection($"server = localhost; user id = root; password = {pass}; database = res_team_15"))
             {
@@ -40,7 +40,7 @@ namespace DataBase
             }
         }
 
-        private void OdrediId()
+        public void OdrediId()
         {
             using (MySqlConnection con = new MySqlConnection($"server = localhost; user id = root; password = {pass}; database = res_team_15"))
             {
@@ -60,28 +60,6 @@ namespace DataBase
                     else 
                         id = 0;
                 }
-            }
-        }
-
-        public void Max(Racunanje m)
-        {
-            using (MySqlConnection con = new MySqlConnection($"server = localhost; user id = root; password = {pass}; database = res_team_15"))
-            {
-                MySqlCommand cmd = new MySqlCommand($"insert into funkcija3(vreme_proracuna, poslednje_merenje, maksimalna_potrosnja) values('{m.VremeProracuna}', '{m.PoslednjeVreme}', {m.Vrednost})", con);
-                con.Open();
-                cmd.ExecuteNonQuery();
-                con.Close();
-            }
-        }
-
-        public void Avg(Racunanje m)
-        {
-            using (MySqlConnection con = new MySqlConnection($"server = localhost; user id = root; password = {pass}; database = res_team_15"))
-            {
-                MySqlCommand cmd = new MySqlCommand($"insert into funkcija1(vreme_proracuna, poslednje_merenje, prosecna_potrosnja) values('{m.VremeProracuna}', '{m.PoslednjeVreme}', {m.Vrednost})", con);
-                con.Open();
-                cmd.ExecuteNonQuery();
-                con.Close();
             }
         }
 
