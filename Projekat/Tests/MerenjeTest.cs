@@ -21,8 +21,8 @@ namespace Tests
         [Test]
         public void VremeTest()
         {
-            Assert.DoesNotThrow(() => new Merenje().Vreme = DateTime.Now);
-            Assert.AreEqual(new Merenje().Vreme, new Merenje().Vreme);
+            Assert.DoesNotThrow(() => new Merenje().Vreme = Convert.ToDateTime("6 / 7 / 2021 10:04:26"));
+            Assert.AreEqual(Convert.ToDateTime("6 / 7 / 2021 10:04:26"), new Merenje().Vreme);
         }
         [Test]
         public void VrednostTest()
