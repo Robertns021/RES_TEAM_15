@@ -15,7 +15,7 @@ namespace FunkcijeProjekat
 
         public IRacunanje FunkcijaMin(IDataAccess da,IRacunanje r)
         {
-            if (poslednjeVremeProracunaList[0] >= da.DobaviPoslednjeVreme())
+            if (poslednjeVremeProracunaList[0] > da.DobaviPoslednjeVreme())
                 return null;
 
             List<Merenje> list = da.DobaviMerenja();
@@ -48,7 +48,7 @@ namespace FunkcijeProjekat
 
         public IRacunanje FunkcijaMax(IDataAccess da, IRacunanje r)
         {
-            if (poslednjeVremeProracunaList[1] >= da.DobaviPoslednjeVreme())
+            if (poslednjeVremeProracunaList[1] > da.DobaviPoslednjeVreme())
                 return null;
 
             List<Merenje> list = da.DobaviMerenja();
@@ -83,7 +83,7 @@ namespace FunkcijeProjekat
 
         public IRacunanje FunkcijaAvg(IDataAccess da, IRacunanje r)
         {
-            if (poslednjeVremeProracunaList[2] >= da.DobaviPoslednjeVreme())
+            if (poslednjeVremeProracunaList[2] > da.DobaviPoslednjeVreme())
                 return null;
 
             List<Merenje> list = da.DobaviMerenja();
